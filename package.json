@@ -1,0 +1,22 @@
+{
+  "name": "codeforrva.org",
+  "version": "1.0.0",
+  "description": "Website for Code For RVA Brigade",
+  "main": "\"\"",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:codeforrva/codeforrva.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeforrva/codeforrva/issues"
+  },
+  "homepage": "https://github.com/codeforrva/codeforrva",
+  "dependencies": {
+    "gulp": "^3.8.11"
+  }
+}
