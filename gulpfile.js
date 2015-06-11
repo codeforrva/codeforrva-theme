@@ -3,7 +3,9 @@ var gulp         = require('gulp'),
     plumber			 = require('gulp-plumber'),
     sass         = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    minifyCss    = require('gulp-minify-css');
+    minifyCss    = require('gulp-minify-css'),
+    rename       = require('gulp-rename'),
+    chmod        = require('gulp-chmod');
 
 gulp.task('sass', function () {
     gulp.src('src/scss/styles.scss')
@@ -23,6 +25,23 @@ gulp.task('serve', ['sass'], function() {
 
     gulp.watch("src/scss/**/*.scss", ['sass']);
     gulp.watch("*.html").on('change', browserSync.reload);
+});
+
+// deploy files to a WordPress theme directory on the server
+gulp.task('deploy', ['sass'], function() {
+    var wpThemeDir = process.env.WP_THEME_DIR;
+    if (!wpThemeDir) throw "Please set the WP_THEME_DIR environment variable.";
+    gulp.src('build/css/styles.css')
+        .pipe(rename('style.css'))
+        .pipe(chmod(664))
+        .pipe(gulp.dest(wpThemeDir));
+    gulp.src('index.html')
+        .pipe(rename('index.php'))
+        .pipe(chmod(664))
+        .pipe(gulp.dest(wpThemeDir));
+    gulp.src('img/**')
+        .pipe(chmod(664))
+        .pipe(gulp.dest(wpThemeDir + '/img'));
 });
 
 gulp.task('default', ['serve']);

@@ -27,6 +27,8 @@
     "browser-sync": "^2.7.4",
     "gulp": "^3.8.11",
     "gulp-plumber": "^1.0.1",
-    "gulp-util": "^3.0.4"
+    "gulp-util": "^3.0.4",
+    "gulp-rename": "~1.2.2",
+    "gulp-chmod": "~1.2.0"
   }
 }
