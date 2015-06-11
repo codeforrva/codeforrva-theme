@@ -30,6 +30,7 @@
     "gulp-util": "^3.0.4",
     "gulp-rename": "~1.2.2",
     "gulp-chmod": "~1.2.0",
-    "gulp-replace": "~0.5.3"
+    "gulp-replace": "~0.5.3",
+    "gulp-processhtml": "~1.1.0"
   }
 }

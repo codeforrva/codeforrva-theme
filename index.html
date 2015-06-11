@@ -7,18 +7,24 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Vollkorn:400,700' rel='stylesheet' type='text/css'>
+        <!-- build:css /wp-content/themes/codeforrva/style.css -->
 	<link rel="stylesheet" type="text/css" href="build/css/styles.css">
+        <!-- /build -->
 </head>
 <body>
 	<header class="header">
 		<div class="container">
+                        <!-- build:replace '<img class="header__logo" src="/wp-content/themes/codeforrva/img/logo.png">' -->
 			<img class="header__logo" src="img/logo.png">
+                        <-- /build -->
+                        <!-- build:replace '<?php c4rva_nav_menu(); ?>' -->
 			<ul class="header__list">
 				<li class="header__list__item"><a href="">Projects</a></li>
 				<li class="header__list__item"><a href="">Events</a></li>
 				<li class="header__list__item"><a href="">About US</a></li>
 				<li class="header__list__item"><a href="">Contact</a></li>
 			</ul>
+                        <!-- /build -->
 		</div>
 	</header>
 	<section class="billboard">

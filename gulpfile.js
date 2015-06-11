@@ -6,7 +6,8 @@ var gulp         = require('gulp'),
     minifyCss    = require('gulp-minify-css'),
     rename       = require('gulp-rename'),
     chmod        = require('gulp-chmod'),
-    replace      = require('gulp-replace');
+    replace      = require('gulp-replace'),
+    processhtml  = require('gulp-processhtml');
 
 gulp.task('sass', function () {
     gulp.src('src/scss/styles.scss')
@@ -39,13 +40,12 @@ gulp.task('deploy', ['sass'], function() {
         .pipe(gulp.dest(wpThemeDir));
     gulp.src('index.html')
         .pipe(rename('index.php'))
-        .pipe(replace(/build\/css\/styles.css/, '/wp-content/themes/codeforrva/style.css'))
-        .pipe(replace(/img\//g, '/wp-content/themes/codeforrva/img/'))
+        .pipe(processhtml())
         .pipe(chmod(664))
         .pipe(gulp.dest(wpThemeDir));
-    gulp.src('img/**')
+    gulp.src(['img/**', '*.php'], { base:'.' })
         .pipe(chmod(664))
-        .pipe(gulp.dest(wpThemeDir + '/img'));
+        .pipe(gulp.dest(wpThemeDir));
 });
 
 gulp.task('default', ['serve']);
