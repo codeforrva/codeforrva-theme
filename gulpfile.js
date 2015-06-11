@@ -43,7 +43,7 @@ gulp.task('deploy', ['sass'], function() {
         .pipe(processhtml())
         .pipe(chmod(664))
         .pipe(gulp.dest(wpThemeDir));
-    gulp.src(['img/**', '*.php'], { base:'.' })
+    gulp.src(['img/**', '*.php', 'plugins/**'], { base:'.' })
         .pipe(chmod(664))
         .pipe(gulp.dest(wpThemeDir));
 });

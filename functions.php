@@ -54,6 +54,14 @@ function c4rva_meetup_widget_init() {
 }
 add_action( 'widgets_init', 'c4rva_meetup_widget_init' );
 
+// load meetup-widgets plugin
+function c4rva_load_plugins() {
+  if (!class_exists('VsMeet')) {
+    require_once(TEMPLATEPATH . '/plugins/meetup-widgets/vs_meetup.php');
+  }
+}
+add_action( 'after_setup_theme', 'c4rva_load_plugins' );
+
 // displays the nav menu (called from theme)
 function c4rva_nav_menu() {
   wp_nav_menu(array(
