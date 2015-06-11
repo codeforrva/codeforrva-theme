@@ -29,6 +29,7 @@
     "gulp-plumber": "^1.0.1",
     "gulp-util": "^3.0.4",
     "gulp-rename": "~1.2.2",
-    "gulp-chmod": "~1.2.0"
+    "gulp-chmod": "~1.2.0",
+    "gulp-replace": "~0.5.3"
   }
 }

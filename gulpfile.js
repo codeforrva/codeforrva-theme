@@ -5,7 +5,8 @@ var gulp         = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     minifyCss    = require('gulp-minify-css'),
     rename       = require('gulp-rename'),
-    chmod        = require('gulp-chmod');
+    chmod        = require('gulp-chmod'),
+    replace      = require('gulp-replace');
 
 gulp.task('sass', function () {
     gulp.src('src/scss/styles.scss')
@@ -33,10 +34,13 @@ gulp.task('deploy', ['sass'], function() {
     if (!wpThemeDir) throw "Please set the WP_THEME_DIR environment variable.";
     gulp.src('build/css/styles.css')
         .pipe(rename('style.css'))
+        .pipe(replace(/\.\.\/\.\.\/img\//, '/wp-content/themes/codeforrva/img/'))
         .pipe(chmod(664))
         .pipe(gulp.dest(wpThemeDir));
     gulp.src('index.html')
         .pipe(rename('index.php'))
+        .pipe(replace(/build\/css\/styles.css/, '/wp-content/themes/codeforrva/style.css'))
+        .pipe(replace(/img\//g, '/wp-content/themes/codeforrva/img/'))
         .pipe(chmod(664))
         .pipe(gulp.dest(wpThemeDir));
     gulp.src('img/**')
