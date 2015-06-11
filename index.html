@@ -30,10 +30,12 @@
 	<section class="billboard">
 		<div class="container">
 			<div class="billboard__panel billboard__next-meetup">
+                                <!-- build:replace '<?php c4rva_show_widget_area("next_meetup"); ?>' -->
 				<h3 class="next-meetup__title">Our Next Meetup</h3>
 				<p class="next-meetup__date">Wednesday, June 10</p>
 				<p class="next-meetup__location">INM United</p>
 				<a class="next-meetup__rsvp" href="#">RSVP Now!</a>
+                                <!-- /build -->
 			</div>
 			<a class="billboard__button" href="#">Learn More</a>
 		</div>
@@ -41,13 +43,19 @@
 	<section class="triptych">
 		<div class="container">
 			<div class="triptych__panel col-md-4">
+                                <!-- build:replace '<?php c4rva_show_widget_area("triptych_left"); ?>' -->
 				<h2 class="triptych__panel__title">For Citizens</h2>
+                                <!-- /build -->
 			</div>	
 			<div class="triptych__panel col-md-4">
+                                <!-- build:replace '<?php c4rva_show_widget_area("triptych_center"); ?>' -->
 				<h2 class="triptych__panel__title">For Government</h2>
+                                <!-- /build -->
 			</div>
 			<div class="triptych__panel col-md-4">
+                                <!-- build:replace '<?php c4rva_show_widget_area("triptych_right"); ?>' -->
 				<h2 class="triptych__panel__title">For Solution Seekers</h2>
+                                <!-- /build -->
 			</div>
 		</div>
 	</section>

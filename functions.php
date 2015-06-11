@@ -13,6 +13,47 @@ function c4rva_nav_menu_css_class($classes, $item) {
 }
 add_filter( 'nav_menu_css_class', 'c4rva_nav_menu_css_class', 10, 2 );
 
+// register triptych widget areas
+function c4rva_triptych_widgets_init() {
+
+  $opts = array(
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '<h2 class="triptych__panel__title">',
+    'after_title' => '</h2>'
+  );
+
+  register_sidebar(array_merge($opts, array(
+    'name' => 'Home Triptych Left',
+    'id' => 'triptych_left'
+  )));
+
+  register_sidebar(array_merge($opts, array(
+    'name' => 'Home Triptych Center',
+    'id' => 'triptych_center'
+  )));
+
+  register_sidebar(array_merge($opts, array(
+    'name' => 'Home Triptych Right',
+    'id' => 'triptych_right'
+  )));
+
+}
+add_action( 'widgets_init', 'c4rva_triptych_widgets_init' );
+
+// register meetup widget area
+function c4rva_meetup_widget_init() {
+  register_sidebar(array(
+    'name' => 'Home Next Meetup',
+    'id' => 'next_meetup',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '',
+    'after_title' => ''
+  ));
+}
+add_action( 'widgets_init', 'c4rva_meetup_widget_init' );
+
 // displays the nav menu (called from theme)
 function c4rva_nav_menu() {
   wp_nav_menu(array(
@@ -22,4 +63,10 @@ function c4rva_nav_menu() {
   ));
 }
 
+// displays a widget area (called from theme)
+function c4rva_show_widget_area( $id ) {
+  if ( is_active_sidebar( $id ) ) {
+    dynamic_sidebar( $id );
+  }
+}
 ?>
