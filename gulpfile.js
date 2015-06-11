@@ -10,7 +10,7 @@ gulp.task('sass', function () {
         .pipe(plumber())
         .pipe(sass())
         .pipe(autoprefixer())
-        .pipe(minifyCss())
+        .pipe(minifyCss({ keepSpecialComments: '*' })) // wordpress needs a header comment
         .pipe(gulp.dest('build/css/'))
         .pipe(browserSync.stream());
 });
