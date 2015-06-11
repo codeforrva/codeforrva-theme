@@ -1,0 +1,63 @@
+.billboard{
+	@include clearfix;
+	position: relative;
+	width: 100%;
+	height: 65vh;
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	background: url('../../img/billboard_pattern_med.png') repeat;
+}
+
+.billboard .container{
+	position: relative;
+}
+
+.billboard__text{
+	background: #fff;
+	position: absolute;
+	// width: 500px;
+	text-align: center;
+	top: 50px;
+	right: 0;
+	box-sizing: border-box;
+	padding: 2rem;
+	box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.95);
+}
+
+.billboard__panel{
+	background: #fff;
+	position: absolute;
+	padding: 2rem;
+	box-sizing: border-box;
+}
+
+.billboard__next-meetup{
+	top: 250px;
+	right: 15px;
+}
+
+.next-meetup__title{
+	text-transform: uppercase;
+	margin-top: 0;
+	font-weight: 100;
+	color: color(grey-medium);
+}
+
+.next-meetup__date{
+	font-size: 1.75rem;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.next-meetup__location{
+	font-size: 1.65rem;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.next-meetup__rsvp{
+	font-size: 1.65rem;
+	margin: 0;
+	color: color(red);
+}
