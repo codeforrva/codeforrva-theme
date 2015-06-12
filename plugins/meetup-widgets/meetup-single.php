@@ -1,5 +1,7 @@
 <?php 
 global $event; 
+$options = get_option('vs_meet_options');
+
 if ( isset( $event->time ) ) {
 	$date = date( 'l, F j @ g:i a', intval( $event->time/1000 + $event->utc_offset/1000 ) );
 } else {
@@ -16,8 +18,9 @@ if ( isset( $event->time ) ) {
 
 <a class="next-meetup__rsvp"
 <?php
-if ( !empty($options['vs_meetup_key']) && !empty($options['vs_meetup_secret']) && class_exists('OAuth')) {
-	echo "href='#' onclick='javascript:window.open(\"{$event->callback_url}&event=$id\",\"authenticate\",\"width=400,height=600\");'";
+// OAuth doesn't seem to be quite working, just display a normal link for now
+if ( false && !empty($options['vs_meetup_key']) && !empty($options['vs_meetup_secret']) && class_exists('OAuth')) {
+	echo "href='".$event->event_url."' onclick='javascript:window.open(\"{$event->callback_url}&event=$id\",\"authenticate\",\"width=600,height=700\");return false;'";
 } else {
 	echo 'href="'.$event->event_url.'"';
 } ?>
