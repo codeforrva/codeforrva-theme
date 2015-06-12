@@ -7,7 +7,8 @@ var gulp         = require('gulp'),
     rename       = require('gulp-rename'),
     chmod        = require('gulp-chmod'),
     replace      = require('gulp-replace'),
-    processhtml  = require('gulp-processhtml');
+    processhtml  = require('gulp-processhtml'),
+    htmlsplit    = require('gulp-htmlsplit');
 
 gulp.task('sass', function () {
     gulp.src('src/scss/styles.scss')
@@ -39,8 +40,8 @@ gulp.task('deploy', ['sass'], function() {
         .pipe(chmod(664))
         .pipe(gulp.dest(wpThemeDir));
     gulp.src('index.html')
-        .pipe(rename('index.php'))
         .pipe(processhtml())
+        .pipe(htmlsplit())
         .pipe(chmod(664))
         .pipe(gulp.dest(wpThemeDir));
     gulp.src(['img/**', '*.php', 'plugins/**'], { base:'.' })
