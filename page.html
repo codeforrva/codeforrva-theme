@@ -1,5 +1,4 @@
-<!-- this is the home page template, the header and footer also come from here -->
-<!-- split header.php -->
+<!-- this is the single page template, the only thing used is the content area -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,62 +8,38 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Vollkorn:400,700' rel='stylesheet' type='text/css'>
-	<!-- build:css /wp-content/themes/codeforrva/style.css -->
 	<link rel="stylesheet" type="text/css" href="build/css/styles.css">
-	<!-- /build -->
 </head>
 <body>
 	<header class="header">
 		<div class="container">
-			<!-- build:[src] /wp-content/themes/codeforrva/img/ -->
 			<img class="header__logo" src="img/logo.png">
-			<!-- /build -->
-			<!-- build:replace '<?php c4rva_nav_menu(); ?>' -->
 			<ul class="header__list">
 				<li class="header__list__item"><a href="">Projects</a></li>
 				<li class="header__list__item"><a href="">Events</a></li>
 				<li class="header__list__item"><a href="">About US</a></li>
 				<li class="header__list__item"><a href="">Contact</a></li>
 			</ul>
-			<!-- /build -->
 		</div>
 	</header>
-<!-- split front-page.php -->
-  <!-- build:replace '<?php get_header(); ?>' --><!-- /build -->
-	<section class="billboard">
-		<div class="container">
-			<div class="billboard__panel billboard__next-meetup">
-				<!-- build:replace '<?php c4rva_show_widget_area("next_meetup"); ?>' -->
-				<h3 class="next-meetup__title">Our Next Meetup</h3>
-				<p class="next-meetup__date">Wednesday, June 10</p>
-				<p class="next-meetup__location">INM United</p>
-				<a class="next-meetup__rsvp" href="#">RSVP Now!</a>
-				<!-- /build -->
-			</div>
-			<a class="billboard__button" href="#">Learn More</a>
+<!-- split page.php -->
+  <!-- build:replace '<?php get_header(); c4rva_show_page(); get_footer(); ?>' -->
+	<article>
+		<header>
+			<h1>Page Title</h1>
+		</header>
+		<div>
+			<p>Fusce dictum fringilla ex et sagittis. Fusce porta diam eget enim interdum, vitae
+			iaculis nulla laoreet. Cras eleifend turpis sed aliquam aliquam. Ut sagittis leo
+			ut erat semper interdum. Praesent lobortis augue in dapibus viverra.</p>
+
+			<p>Pellentesque at nisi mattis ligula sollicitudin sagittis a a ex. Suspendisse
+			tristique, libero sed semper tristique, dui dui luctus risus, porta sodales
+			nisl diam ut sapien. Praesent eu libero ut ante luctus accumsan.</p>
 		</div>
-	</section>
-	<section class="triptych">
-		<div class="container">
-			<div class="triptych__panel col-md-4">
-				<!-- build:replace '<?php c4rva_show_widget_area("triptych_left"); ?>' -->
-				<h2 class="triptych__panel__title">For Citizens</h2>
-				<!-- /build -->
-			</div>
-			<div class="triptych__panel col-md-4">
-				<!-- build:replace '<?php c4rva_show_widget_area("triptych_center"); ?>' -->
-				<h2 class="triptych__panel__title">For Government</h2>
-				<!-- /build -->
-			</div>
-			<div class="triptych__panel col-md-4">
-				<!-- build:replace '<?php c4rva_show_widget_area("triptych_right"); ?>' -->
-				<h2 class="triptych__panel__title">For Solution Seekers</h2>
-				<!-- /build -->
-			</div>
-		</div>
-	</section>
-	<!-- build:replace '<?php get_footer(); ?>' --><!-- /build -->
-<!-- split footer.php -->
+	</article>
+	<!-- /build -->
+<!-- split stop -->
 	<section class="contact-footer">
 		<div class="container">
 			<div class="row">
@@ -83,9 +58,7 @@
 		</div>
 	</section>
 	<footer class="footer">
-		<!-- build:[src] /wp-content/themes/codeforrva/img/ -->
 		<img class="footer__logo" src="img/logo.png">
-		<!-- /build -->
 		<ul>
 			<li><a href="#">Code of Conduct</a></li>
 		</ul>

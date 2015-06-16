@@ -39,7 +39,7 @@ gulp.task('deploy', ['sass'], function() {
         .pipe(replace(/\.\.\/\.\.\/img\//, '/wp-content/themes/codeforrva/img/'))
         .pipe(chmod(664))
         .pipe(gulp.dest(wpThemeDir));
-    gulp.src('index.html')
+    gulp.src(['index.html','page.html'])
         .pipe(processhtml())
         .pipe(htmlsplit())
         .pipe(chmod(664))

@@ -32,6 +32,6 @@
     "gulp-chmod": "~1.2.0",
     "gulp-replace": "~0.5.3",
     "gulp-processhtml": "~1.1.0",
-    "gulp-htmlsplit": "~1.0.0"
+    "gulp-htmlsplit": "~1.1.0"
   }
 }

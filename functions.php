@@ -77,4 +77,20 @@ function c4rva_show_widget_area( $id ) {
     dynamic_sidebar( $id );
   }
 }
+
+// displays the page content (called from theme)
+function c4rva_show_page() {
+  while (have_posts()) : the_post();
+  ?>
+  <article>
+    <header>
+      <?php the_title('<h1>', '</h1>'); ?>
+    </header>
+    <div>
+      <?php the_content(); ?>
+    </div>
+  </article>
+  <?php
+  endwhile;
+}
 ?>
