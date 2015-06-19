@@ -2,20 +2,22 @@
 $colors: (
 	blue: #536271,
 	red: #D5394F,
+	red-dark: #901B1A,
+	green: #ADC9C3,
 	text: #545454,
 	grey-light: #e5e5e5,
 	grey-medium: #999595,
 	grey-dark: #444444
 );
 
-// container width
-$max-width: 1200px;
-
 // links
 a{
+	@include transition;
 	text-decoration: none;
+	color: color(red-dark);
 	&:hover{
 		text-decoration: none;
+		color: color(blue);
 	}
 }
 
@@ -23,17 +25,7 @@ li{
 	list-style-type: none;
 }
 
-.style__title{
-	color: color(grey-dark);
+p{
+	@include font('sans', 300, 1.85rem);
+	color: color(text);
 }
-
-.color__tile{
-	height: 60px;
-}
-
-.color__tile.p1{ background: color(red); }
-.color__tile.p2{ background: color(blue); }
-
-.color__tile.g1{ background: color(grey-light); }
-.color__tile.g2{ background: color(grey-medium); }
-.color__tile.g3{ background: color(grey-dark); }

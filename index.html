@@ -7,7 +7,10 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Vollkorn:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="build/css/styles.css">
+	<!-- Mapbox CSS -->
+	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.css' rel='stylesheet' />
 </head>
 <body>
 	<header class="header">
@@ -15,7 +18,7 @@
 			<img class="header__logo" src="img/logo.png">
 			<ul class="header__list">
 				<li class="header__list__item"><a href="">Projects</a></li>
-				<li class="header__list__item"><a href="">Events</a></li>
+				<li class="header__list__item"><a href="">Open Data Portal</a></li>
 				<li class="header__list__item"><a href="">About US</a></li>
 				<li class="header__list__item"><a href="">Contact</a></li>
 			</ul>
@@ -23,52 +26,87 @@
 	</header>
 	<section class="billboard">
 		<div class="container">
-			<div class="billboard__panel billboard__next-meetup">
-				<h3 class="next-meetup__title">Our Next Meetup</h3>
-				<p class="next-meetup__date">Wednesday, June 10</p>
-				<p class="next-meetup__location">INM United</p>
-				<a class="next-meetup__rsvp" href="#">RSVP Now!</a>
+			<div class="billboard__panel mission">
+				<h1 class="mission__title">We use technology to solve social problems.</h1>
+				<p class="mission__statement">We are Code for RVA, a Code for America Brigade. We develop partnerships with municipal and community partners in order to collaborate together to better understand where we can make an impact in our community.</p>
 			</div>
-			<a class="billboard__button" href="#">Learn More</a>
+			<div class="billboard__panel news">
+					<h3 class="news__title">Latest News</h3>
+					<a href="#" class="news__headline">Food Access SMS App Launch</a>
+					<p class="news__summary">The brigade had a successful development spike to launch v1 of the food access SMS app</p>
+			</div>
+			<div class="billboard__panel next-meetup">
+					<h3 class="next-meetup__title">Next Meetup</h3>
+					<p class="next-meetup__date"><i class="fa fa-calendar next-meetup__icon"></i>Wednesday, June 10, 6:30pm&mdash;9:00pm</p>
+					<p class="next-meetup__location"><i class="fa fa-map-marker next-meetup__icon"></i>INM United</p>
+					<a class="next-meetup__rsvp" href="#">RSVP</a>
+			</div>
 		</div>
 	</section>
 	<section class="triptych">
 		<div class="container">
 			<div class="triptych__panel col-md-4">
 				<h2 class="triptych__panel__title">For Citizens</h2>
+				<p class="triptych__panel__text">Our goal is to effect real, meaningful, lasting, positive change for the people of Richmond. We love working with citizens and civic organizations to solve tough problems. Got a project idea, or something that needs to be fixed? Drop us a line, and let's talk about how we can help.</p>
 			</div>	
 			<div class="triptych__panel col-md-4">
 				<h2 class="triptych__panel__title">For Government</h2>
+				<p class="triptych__panel__text">We help local and state agencies serve their citizens, with better access to services and information, presented in new ways. Our team can help agencies make better use of their resources, and we can take on projects that don't fit easily into an agency's day-to-day business. We're ready to work; get in touch and let us know what you need.</p>
 			</div>
 			<div class="triptych__panel col-md-4">
-				<h2 class="triptych__panel__title">For Solution Seekers</h2>
+				<h2 class="triptych__panel__title">Get Involved</h2>
+				<p class="triptych__panel__text">We love meeting new people who want to make a difference! Check out our projects to see what we've got going on. If you're a coder, you can check us out on GitHub; all of our work is open source. If not, that's great too! We all have different skills and skill levels, but we share a drive to make a difference. Shoot us an email or stop by a meeting; we can't wait to meet you!</p>
 			</div>
 		</div>
 	</section>
-	<section class="contact-footer">
+	<section class="contact">
+		<div id="map"></div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 contact-footer__form">
-					<form>
-						<div class="form-group">
-					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-					  </div>
-					</form>
+				<div class="col-md-6 contact__info">
+					<h2 class="contact__info__title">Drop us a line.</h2>
+					<p class="contact__info__text">We are always looking for problems to solve and for folks to help build solutions.</p>
 				</div>
-				<div class="contact-footer__coffee">
-				<p>Let's grab a coffee.</p>
-				<p>Sometimes it's easier to talk in person.</p>
+				<div class="col-md-5 col-md-offset-1 contact__form">
+				<form>
+				  <div class="form-group">
+				    <input type="text" class="form-control" placeholder="Name">
+				  </div>
+				  <div class="form-group">
+				    <input type="email" class="form-control" placeholder="Email">
+				  </div>
+				  <div class="form-group">
+				    <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+				  </div>
+				  <button type="submit" class="contact__submit">Submit</button>
+				</form>
 				</div>
 			</div>
 		</div>
 	</section>
 	<footer class="footer">
-		<img class="footer__logo" src="img/logo.png">
-		<ul>
-			<li><a href="#">Code of Conduct</a></li>
-		</ul>
+		<div class="container">
+			<img class="footer__logo" src="img/logo.png"><span class="footer__subtitle">a <a href="#">Code For America</a> Brigade</span>
+			<ul class="footer__nav">
+				<li class="footer__nav__item"><a href="#">Code of Conduct</a></li>
+				<li class="footer__nav__item"><a href="#">Code For America</a></li>
+				<li class="footer__nav__item"><a href="#">Open Data Portal</a></li>
+			</ul>
+		</div>
 	</footer>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<!-- Mapbox JS -->
+	<script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.js'></script>
+	<script>
+		// Provide your access token
+		L.mapbox.accessToken = 'pk.eyJ1IjoiY29kZWZvcnJ2YSIsImEiOiI2Zl90Nk53In0.Z5abzPIO5z45GKyaizMFIg';
+		// Create a map in the div #map
+		var map = L.mapbox.map('map', 'codeforrva.mfoko7ik', {
+			zoomControl: false,
+		}).setView([37.538, -77.43], 14);
+		map.dragging.enable();
+		map.scrollWheelZoom.disable()
+	</script>
 </body>
 </html>
