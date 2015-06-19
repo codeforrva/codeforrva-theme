@@ -1,0 +1,69 @@
+<!-- this is the single page template, the only thing used is the content area -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Code For RVA</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Vollkorn:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="build/css/styles.css">
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<img class="header__logo" src="img/logo.png">
+			<ul class="header__list">
+				<li class="header__list__item"><a href="">Projects</a></li>
+				<li class="header__list__item"><a href="">Events</a></li>
+				<li class="header__list__item"><a href="">About US</a></li>
+				<li class="header__list__item"><a href="">Contact</a></li>
+			</ul>
+		</div>
+	</header>
+<!-- split page.php -->
+  <!-- build:replace '<?php get_header(); c4rva_show_page(); get_footer(); ?>' -->
+	<article>
+		<header>
+			<h1>Page Title</h1>
+		</header>
+		<div>
+			<p>Fusce dictum fringilla ex et sagittis. Fusce porta diam eget enim interdum, vitae
+			iaculis nulla laoreet. Cras eleifend turpis sed aliquam aliquam. Ut sagittis leo
+			ut erat semper interdum. Praesent lobortis augue in dapibus viverra.</p>
+
+			<p>Pellentesque at nisi mattis ligula sollicitudin sagittis a a ex. Suspendisse
+			tristique, libero sed semper tristique, dui dui luctus risus, porta sodales
+			nisl diam ut sapien. Praesent eu libero ut ante luctus accumsan.</p>
+		</div>
+	</article>
+	<!-- /build -->
+<!-- split stop -->
+	<section class="contact-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 contact-footer__form">
+					<form>
+						<div class="form-group">
+					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+					  </div>
+					</form>
+				</div>
+				<div class="contact-footer__coffee">
+				<p>Let's grab a coffee.</p>
+				<p>Sometimes it's easier to talk in person.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<img class="footer__logo" src="img/logo.png">
+		<ul>
+			<li><a href="#">Code of Conduct</a></li>
+		</ul>
+	</footer>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>
